@@ -44,8 +44,11 @@ app.use(function(err, req, res, next) {
 // Tenta conectar com o banco de dados
 //
 //
-// Livro l1 = new Livro()
-//const sequelize = require('./config/database');
+
+const sequelize = require('./config/database');
+const User = require('./modules/user/user');
+sequelize.sync({alter:true});
+
 //sequelize.authenticate()
 //.then(  () => console.log("conexão ok")  )
 //.catch( erro => console.log("Erro na conexão:", erro)  );
